@@ -21,4 +21,3 @@
         go_version: "1.10.3"
         go_os: linux
         go_arch: amd64
-
