@@ -1,3 +1,9 @@
+.vagrant
+playbook.retry
+.env
+roles/
+
+
 *.gem
 *.rbc
 /.config

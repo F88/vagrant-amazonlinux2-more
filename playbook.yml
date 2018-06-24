@@ -1,0 +1,24 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - debug: var=ansible_hostname
+    - debug: var=ansible_default_ipv4
+    - yum: 
+        name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+        state: present
+    - yum:
+        name: nginx
+        state: present
+    - systemd:
+        name: nginx
+        enabled: yes
+        state: started
+        daemon_reload: yes
+  roles:
+    - role: brentwg.golang
+      vars:
+        go_version: "1.10.3"
+        go_os: linux
+        go_arch: amd64
+
